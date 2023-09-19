@@ -6,17 +6,29 @@ const useFetch = (endpoint, query) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  // const options = {
+  //   method: "GET",
+  //   url: `https://jsearch.p.rapidapi.com/${endpoint}`,
+  //   headers: {
+  //     "X-RapidAPI-Key": '',
+  //     "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
+  //   },
+  //   params: { ...query },
+  // };
+
   const options = {
-    method: "GET",
+    method: 'GET',
     url: `https://jsearch.p.rapidapi.com/${endpoint}`,
-    headers: {
-      "X-RapidAPI-Key": '',
-      "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
+    params: {
+      ...query
     },
-    params: { ...query },
+    headers: {
+      'X-RapidAPI-Key': '19d49732b3mshe53fe639fa87257p13fee9jsn998971964a98',
+      'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
+    }
   };
 
-  
+
 
   const fetchData = async () => {
     setIsLoading(true);
