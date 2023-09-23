@@ -6,21 +6,17 @@ const useFetch = (endpoint, query) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // const options = {
-  //   method: "GET",
-  //   url: `https://jsearch.p.rapidapi.com/${endpoint}`,
-  //   headers: {
-  //     "X-RapidAPI-Key": '',
-  //     "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
-  //   },
-  //   params: { ...query },
-  // };
+  console.log("////////////////////////////////////////////////////////////////////////////");
+  console.log("/////////////////////////////////////////////////////////////////////////cz");
+  console.log("query :",query);
+
 
   const options = {
     method: 'GET',
     url: `https://jsearch.p.rapidapi.com/${endpoint}`,
     params: {
-      ...query
+      ...query,
+      job_requirements:"under_3_years_experience"
     },
     headers: {
       'X-RapidAPI-Key': '19d49732b3mshe53fe639fa87257p13fee9jsn998971964a98',

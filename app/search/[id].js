@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { ActivityIndicator, FlatList, Image, TouchableOpacity, View } from 'react-native'
+import { ActivityIndicator, Alert, FlatList, Image, TouchableOpacity, View } from 'react-native'
 import { Stack, useRouter, useSearchParams } from 'expo-router'
 import { Text, SafeAreaView } from 'react-native'
 import axios from 'axios'
@@ -11,6 +11,7 @@ import styles from '../../styles/search'
 const JobSearch = () => {
     const params = useSearchParams();
     const router = useRouter()
+    console.log("params : ",params)
 
     const [searchResult, setSearchResult] = useState([]);
     const [searchLoader, setSearchLoader] = useState(false);
@@ -30,7 +31,8 @@ const JobSearch = () => {
                     "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
                 },
                 params: {
-                    query: params.id,
+                    query:"React in India",
+                    employment_types: params.id,
                     page: page.toString(),
                 },
             };
